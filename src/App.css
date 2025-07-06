@@ -247,31 +247,43 @@ body {
 
   /* --- Header Adjustments --- */
   .app-header {
-    padding: 0.8rem 1rem; /* Reduce padding on smaller screens */
-    flex-direction: column; /* Stack logo and actions vertically */
-    gap: 0.8rem;
+    padding: 1rem; /* Consistent padding */
+    flex-direction: row; /* Keep it as a row */
+    justify-content: space-between; /* Keep space between */
+    align-items: center;
+  }
+
+  .logo-text {
+    font-size: 1.2rem; /* Slightly smaller logo text */
+  }
+
+  .tagline {
+    display: none; /* Hide tagline on mobile to save space */
   }
 
   .header-actions {
-    gap: 1rem; /* Reduce gap between icons */
-  }
-
-  .logo-container {
-    align-items: center; /* Center the logo and tagline */
+    gap: 0.8rem; /* Tighter gap for icons */
   }
 
   /* --- Homepage Container Adjustments --- */
   .homepage-container {
-    padding: 0 1rem 1rem 1rem; /* Reduce side padding */
+    padding: 0 1rem 1rem 1rem;
   }
 
   /* --- Product Grid Adjustments --- */
   .product-grid {
-    grid-template-columns: 1fr; /* Stack products in a single column */
+    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
   h2 {
-    font-size: 1.5rem; /* Make headings smaller */
+    font-size: 1.5rem;
+    margin-top: 2rem !important; /* Ensure spacing is consistent */
+  }
+
+  /* --- Auth Form on Mobile --- */
+  .auth-container {
+    width: 90%; /* Don't let it touch the edges */
+    padding: 1.5rem;
   }
 }

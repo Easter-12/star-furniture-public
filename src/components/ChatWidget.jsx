@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { supabase } from '../supabaseClient';
 import './ChatWidget.css';
 
-// A unique, fixed ID for the admin, same as in the admin panel
 const ADMIN_USER_ID = '00000000-0000-0000-0000-000000000001';
 
 function ChatWidget({ user }) {
@@ -11,20 +10,16 @@ function ChatWidget({ user }) {
   const [newMessage, setNewMessage] = useState('');
   const messagesEndRef = useRef(null);
 
-  // Effect to scroll to the bottom of the messages
   useEffect(() => {
     if (isOpen) {
       messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
   }, [messages, isOpen]);
 
-  // Effect to fetch message history and subscribe to new messages
   useEffect(() => {
     if (!isOpen || !user) return;
 
-    // Fetch initial messages
     const fetchMessages = async () => {
-      // --- THIS IS THE CORRECTED QUERY ---
       const { data, error } = await supabase
         .from('messages')
         .select('*')
@@ -40,7 +35,6 @@ function ChatWidget({ user }) {
 
     fetchMessages();
 
-    // Set up real-time subscription
     const subscription = supabase
       .channel(`messages-${user.id}`)
       .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'messages' }, (payload) => {
@@ -63,7 +57,7 @@ function ChatWidget({ user }) {
 
     const messageData = {
       content: newMessage,
-      sender_id: user.id, // The logged-in user is the sender
+      sender_id: user.id,
       receiver_id: ADMIN_USER_ID,
     };
 
@@ -75,7 +69,7 @@ function ChatWidget({ user }) {
     }
   };
 
-  if (!user) return null; // Don't render the widget if user is not logged in
+  if (!user) return null;
 
   return (
     <div className="chat-widget-container">
