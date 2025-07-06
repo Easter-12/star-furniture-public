@@ -17,7 +17,7 @@ function BillboardSlider() {
   const slidesData = [
     {
       // Paste your first image URL here
-      image: "https://splmzdoyeshqsrasqcqz.supabase.co/storage/v1/object/public/billboard-image//chairie.png", 
+      image: "https://splmzdoyeshqsrasqcqz.supabase.co/storage/v1/object/public/billboard-image//SKU00009190-FurnitureOffice-FurnitureOffice-Chairs%20(1).jpg", 
       heading: 'Premium Ergonomic Office Chairs',
       description: 'Designed for Comfort & Productivity'
     },
