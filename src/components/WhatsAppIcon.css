@@ -1,0 +1,21 @@
+.whatsapp-icon {
+  position: absolute; /* Position relative to the container */
+  bottom: 80px; /* Place it 80px from the bottom of the container */
+  right: 0; /* Place it on the right edge of the container */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #25D366;
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.1);
+}
