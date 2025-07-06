@@ -4,7 +4,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  background-color: #f4f7f6;
+  background-color: #fffaf0; /* Soft cream / milk white */
   color: #333;
 }
 
@@ -13,7 +13,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
-  padding: 2rem;
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -86,24 +86,7 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-}
-
-.homepage-container h1 {
-  text-align: center;
-  color: #2c3e50;
-  margin-bottom: 2rem;
-}
-
-.logout-button {
-  display: block;
-  margin: 0 auto 2rem auto;
-  padding: 10px 20px;
-  background-color: #e74c3c;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  padding: 0 2rem 2rem 2rem;
 }
 
 .product-grid {
@@ -153,11 +136,109 @@ body {
   flex-grow: 1;
 }
 
-/* --- UPDATED FLOATING CONTAINER STYLE --- */
+/* Floating Action Buttons */
 .floating-actions-container {
   position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 1000;
-  /* Removed flex properties */
+}
+
+/* --- FINAL, CORRECTED HEADER STYLES --- */
+.app-header {
+  display: flex;
+  justify-content: space-between; /* This is the key property */
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-text {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #7f8c8d;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* About Us Button in Header */
+.header-button {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.header-button:hover {
+  background-color: #e0e0e0;
+  border-color: #aaa;
+}
+
+/* About Us Overlay Styles */
+.about-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1002;
+}
+
+.about-content {
+  background-color: white;
+  padding: 2rem 3rem;
+  border-radius: 8px;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.about-content h2 {
+  color: #2c3e50;
+  margin-top: 0;
+}
+
+.about-content p {
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.close-about-btn {
+  margin-top: 1.5rem;
+  padding: 10px 30px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
 }
