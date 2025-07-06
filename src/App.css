@@ -242,3 +242,36 @@ body {
   cursor: pointer;
   font-size: 1rem;
 }
+/* --- RESPONSIVE STYLES (for screens smaller than 768px) --- */
+@media (max-width: 768px) {
+
+  /* --- Header Adjustments --- */
+  .app-header {
+    padding: 0.8rem 1rem; /* Reduce padding on smaller screens */
+    flex-direction: column; /* Stack logo and actions vertically */
+    gap: 0.8rem;
+  }
+
+  .header-actions {
+    gap: 1rem; /* Reduce gap between icons */
+  }
+
+  .logo-container {
+    align-items: center; /* Center the logo and tagline */
+  }
+
+  /* --- Homepage Container Adjustments --- */
+  .homepage-container {
+    padding: 0 1rem 1rem 1rem; /* Reduce side padding */
+  }
+
+  /* --- Product Grid Adjustments --- */
+  .product-grid {
+    grid-template-columns: 1fr; /* Stack products in a single column */
+    gap: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Make headings smaller */
+  }
+}

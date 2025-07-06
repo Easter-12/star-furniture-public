@@ -50,3 +50,17 @@
   opacity: 1;
   color: white;
 }
+/* --- RESPONSIVE STYLES for Slider --- */
+@media (max-width: 768px) {
+  .slide {
+    height: 40vh; /* Make the slider shorter on mobile */
+  }
+
+  .slide-content h2 {
+    font-size: 1.8rem; /* Smaller heading */
+  }
+
+  .slide-content p {
+    font-size: 1rem; /* Smaller description */
+  }
+}
